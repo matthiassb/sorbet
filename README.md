@@ -7,7 +7,7 @@ Sorbet
 
 [![NPM](https://nodei.co/npm/sorbet.png)](https://nodei.co/npm/sorbet/)
 
-A simple, light and delicious infrastructure monitoring solution.
+A light, simple, and delicious infrastructure monitoring solution.
 
 
 #### How to install
