@@ -1,6 +1,6 @@
 {
   "name": "sorbet",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A light, simple, and delicious infrastructure monitoring solution.",
   "main": "index.js",
   "scripts": {
