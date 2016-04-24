@@ -1,13 +1,11 @@
-<p align="center">
-    <img src="./img/logo.png" width=300>
-</p>
+<img src="https://raw.githubusercontent.com/matthiassb/sorbet/master/img/logo.png" width="200" align="right">
 
 Sorbet
 ======================
 
 [![NPM](https://nodei.co/npm/sorbet.png)](https://nodei.co/npm/sorbet/)
 
-A light, simple, and delicious infrastructure monitoring solution.
+A light, simple, and delicious infrastructure monitoring solution.  
 
 
 #### How to install
@@ -26,11 +24,11 @@ Navigate to http://localhost:6767
 ```bash
 $ [sudo] sorbet --help
 ```
-![CLI Screenshot](img/cli-help.png)
+![CLI Screenshot](https://raw.githubusercontent.com/matthiassb/sorbet/master/img/cli-help.png)
 
 
 #### Screenshots
 
-![Screenshot 1](img/sorbet.png)
+![Screenshot 1](https://raw.githubusercontent.com/matthiassb/sorbet/master/img/sorbet.png)
 
-![Screenshot 1](img/sorbet2.png)
+![Screenshot 1](https://raw.githubusercontent.com/matthiassb/sorbet/master/img/sorbet2.png)
