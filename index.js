@@ -25,7 +25,7 @@ var db = new Datastore({
 var scheduler = require('./lib/scheduler.js')(SSH, db);
 
 server.connection({
-  port: 3000,
+  port: 6767,
   routes: {
     files: {
       relativeTo: Path.join(__dirname, 'resources')
@@ -217,7 +217,7 @@ async.series([
             SCHEDULES.push(scheduler(doc["_id"], doc.host, doc.username, doc.password));
           })
         });
-        
+
         db.persistence.setAutocompactionInterval(60000)
         console.log('Server running at:', server.info.uri);
       });
