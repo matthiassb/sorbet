@@ -10,7 +10,7 @@ A light, simple, and delicious infrastructure monitoring solution.
 
 #### How to install
 ```bash
-$ [sudo] npm install -g bower gulp
+$ [sudo] npm install -g sorbet
 ```
 
 #### How to run
