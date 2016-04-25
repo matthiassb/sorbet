@@ -1,6 +1,6 @@
 {
   "name": "sorbet",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A light, simple, and delicious infrastructure monitoring solution.",
   "main": "index.js",
   "scripts": {
@@ -32,5 +32,13 @@
     "simple-ssh": "^0.8.9",
     "vision": "^4.1.0"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthiassb/sorbet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matthiassb/sorbet/issues"
+  },
+  "homepage": "https://github.com/matthiassb/sorbet#readme"
 }
