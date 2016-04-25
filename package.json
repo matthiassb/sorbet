@@ -1,6 +1,6 @@
 {
   "name": "sorbet",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A light, simple, and delicious infrastructure monitoring solution.",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "later": "^1.2.0",
     "nedb": "^1.8.0",
     "pm2": "^1.1.2",
+    "simple-encryptor": "^1.1.0",
     "simple-ssh": "^0.8.9",
     "vision": "^4.1.0"
   }

@@ -10,6 +10,7 @@ var Datastore = require('nedb');
 var Joi = require('joi');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
+var encryptor = null;
 
 var HOME_DIR = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 var CONFIG_DIR = Path.join(HOME_DIR, ".sorbet");
@@ -99,13 +100,17 @@ server.route({
       }
       value.status = -1;
       value.lastCheck = null;
+      var plainPass = value.password;
+      value.password = encryptor.encrypt(value.password);
+
       db.insert(value, function(err, newDoc) {
         if (err) {
           return reply({
             "message": err.message
           }).code(500);
         }
-        SCHEDULES.push(scheduler(newDoc["_id"], value.host, value.username, value.password));
+        
+        SCHEDULES.push(scheduler(newDoc["_id"], value.host, value.username, plainPass));
         reply({
           "id": newDoc["_id"],
           "message": "System added"
@@ -208,18 +213,32 @@ async.series([
         SORBET_CONFIG = require(CONFIG_FILE);
       }
 
+
       server.start(function(err) {
         if (err) {
           throw err;
         }
+        if(!SORBET_CONFIG['encKey']){
+          require('crypto').randomBytes(48, function(err, buffer) {
+            var token = buffer.toString('hex');
+            updateConfig('encKey', token)
+            encryptor = require('simple-encryptor')(token);
+          });
+        } else {
+          encryptor = require('simple-encryptor')(SORBET_CONFIG['encKey']);
+        }
         db.find({}, function(err, docs) {
           docs.forEach(function(doc) {
-            SCHEDULES.push(scheduler(doc["_id"], doc.host, doc.username, doc.password));
+            SCHEDULES.push(scheduler(doc["_id"], doc.host, doc.username, encryptor.decrypt(doc.password)));
           })
         });
-
         db.persistence.setAutocompactionInterval(60000)
         console.log('Server running at:', server.info.uri);
       });
     }
   });
+
+function updateConfig(key, value){
+  SORBET_CONFIG[key] = value;
+  fs.writeFile(CONFIG_FILE, JSON.stringify(SORBET_CONFIG, null, 2) , 'utf-8');
+}
