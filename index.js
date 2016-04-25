@@ -100,8 +100,11 @@ server.route({
       }
       value.status = -1;
       value.lastCheck = null;
-      var plainPass = value.password;
-      value.password = encryptor.encrypt(value.password);
+      if(value.password){
+        var plainPass = value.password;
+        value.password = encryptor.encrypt(value.password);
+      }
+
 
       db.insert(value, function(err, newDoc) {
         if (err) {
@@ -109,8 +112,11 @@ server.route({
             "message": err.message
           }).code(500);
         }
-        
-        SCHEDULES.push(scheduler(newDoc["_id"], value.host, value.username, plainPass));
+        if(plainPass){
+          SCHEDULES.push(scheduler(newDoc["_id"], value.host, value.username, plainPass));
+        } else {
+          SCHEDULES.push(scheduler(newDoc["_id"], value.host, value.username, null, value.ssh_key));
+        }
         reply({
           "id": newDoc["_id"],
           "message": "System added"
@@ -229,7 +235,12 @@ async.series([
         }
         db.find({}, function(err, docs) {
           docs.forEach(function(doc) {
-            SCHEDULES.push(scheduler(doc["_id"], doc.host, doc.username, encryptor.decrypt(doc.password)));
+            if(doc.password){
+              SCHEDULES.push(scheduler(doc["_id"], doc.host, doc.username, encryptor.decrypt(doc.password)));
+            } else {
+              SCHEDULES.push(scheduler(doc["_id"], doc.host, doc.username, null, doc.ssh_key));
+            }
+
           })
         });
         db.persistence.setAutocompactionInterval(60000)

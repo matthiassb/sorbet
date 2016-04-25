@@ -55,11 +55,6 @@
           <a href="#" class="dropdown-toggle" role="button" aria-expanded="false">Sorbet
               </a>
         </li>
-        <li class="hidden-xs">
-          <a class="navbar-fullscreen toggle-active" href="#">
-            <span class="glyphicon glyphicon-fullscreen"></span>
-          </a>
-        </li>
       </ul>
       <form class="navbar-form navbar-right search-form square" role="search">
         <div class="input-group add-on">
@@ -229,17 +224,34 @@
                             </div>
 
                             <div class="section row">
+                              <div class="col-md-12 ph15" >
+                                <div class="form-group">
+
+                                    <div class="col-lg-8 col-lg-offset-2">
+                                        <div class="bs-component">
+                                            <select class="form-control" id="authSelector">
+                                                <option disabled selected>Auth Type</option>
+                                                <option>Password</option>
+                                                <option>Key</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <div class="section row">
                               <div class="col-md-12 ph15">
-                                  <label for="password" class="field prepend-icon">
+                                  <label for="password" class="field prepend-icon" id="passContainer" style="display: none;">
                                       <input type="password" name="password" id="password" class="gui-input"
                                              placeholder="Password...">
                                       <label for="password" class="field-icon">
                                           <i class="fa fa-key"></i>
                                       </label>
                                   </label>
+                                  <textarea style="display: none;" class="form-control" name="ssh_key" placeholder="SSH Key..." id="keyContainer" rows="3"></textarea>
                               </div>
-                            </div>
-
+                          </div>
                         </div>
                         <!-- -------------- /Form -------------- -->
 
@@ -312,9 +324,36 @@
 
   <script>
     $(document).ready(function() {
+      $("#authSelector").on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        if(valueSelected == "Password"){
+          $("#passContainer").show();
+          $("#keyContainer").hide();
+        } else {
+          $("#passContainer").hide();
+          $("#keyContainer").show();
+        }
+      });
       $("#systemAddForm").submit(function(e){
         e.preventDefault();
-        $.post("/svc/systems", $(this).serialize(), function(res){
+        var payload = {
+          host: $("input[name='host']").val(),
+          username: $("input[name='username']").val(),
+        };
+
+        var valueSelected = $("#authSelector").val()
+        if(valueSelected == "Password"){
+          payload.password = $("input[name='password']").val()
+        } else if(valueSelected == "Key"){
+          payload.ssh_key = $("textarea[name='ssh_key']").val()
+        } else {
+          alert("Password or SSH Key must be selected");
+          return;
+        }
+        console.log(payload)
+
+        $.post("/svc/systems", payload, function(res){
           $("#systemAddAlert").slideUp(function(){
             $("#systemAddAlert").text(res.message)
             $("#systemAddAlert").switchClass('alert-danger', 'alert-success')
@@ -338,6 +377,12 @@
             beforeOpen: function(e) {
               var Animation = $("#animation-switcher").find('.active-animation').attr('data-effect');
               this.st.mainClass = "mfp-flipInY";
+            },
+            close: function(e){
+              $("#systemAddForm")[0].reset();
+              $("#authSelector").val('Auth Type')
+              $("#passContainer").hide();
+              $("#keyContainer").hide();
             }
           },
           midClick: true

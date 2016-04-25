@@ -3,10 +3,11 @@
 Sorbet
 ======================
 
-[![NPM](https://nodei.co/npm/sorbet.png)](https://nodei.co/npm/sorbet/)
+[![NPM](https://nodei.co/npm/sorbet.png?mini=true)](https://nodei.co/npm/sorbet/)
 
 A light, simple, and delicious infrastructure monitoring solution.  
 
+Simple monitoring via SSH.
 
 #### How to install
 ```bash
