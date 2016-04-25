@@ -1,85 +1,54 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <!-- -------------- Meta and Title -------------- -->
+  <!-- ============== Meta and Title ============== -->
   <meta charset="utf-8">
   <title>Sorbet</title>
-  <meta name="keywords" content="HTML5, Bootstrap 3, Admin Template, UI Theme" />
-  <meta name="description" content="Alliance - A Responsive HTML5 Admin UI Framework">
-  <meta name="author" content="ThemeREX">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- -------------- Fonts -------------- -->
-  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- -------------- Icomoon -------------- -->
-  <link rel="stylesheet" type="text/css" href="assets/fonts/icomoon/icomoon.css">
-
-  <!-- -------------- FullCalendar -------------- -->
-  <link rel="stylesheet" type="text/css" href="assets/js/plugins/fullcalendar/fullcalendar.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/js/plugins/magnific/magnific-popup.css">
-
-  <!-- -------------- Plugins -------------- -->
-  <link rel="stylesheet" type="text/css" href="assets/js/plugins/c3charts/c3.min.css">
-
-  <!-- -------------- CSS - theme -------------- -->
-  <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
-
-  <!-- -------------- CSS - allcp forms -------------- -->
-  <link rel="stylesheet" type="text/css" href="assets/allcp/forms/css/forms.css">
-
-  <!-- -------------- Favicon -------------- -->
-  <link rel="shortcut icon" href="assets/img/favicon.ico">
-
-  <!-- -------------- IE8 HTML5 support  -------------- -->
+  <meta content="HTML5, Bootstrap 3, Admin Template, UI Theme" name="keywords">
+  <meta content="Alliance - A Responsive HTML5 Admin UI Framework" name="description">
+  <meta content="ThemeREX" name="author">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"><!-- ============== Fonts ============== -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'><!-- ============== Icomoon ============== -->
+  <link href="assets/fonts/icomoon/icomoon.css" rel="stylesheet" type="text/css"><!-- ============== FullCalendar ============== -->
+  <link href="assets/js/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/js/plugins/magnific/magnific-popup.css" rel="stylesheet" type="text/css"><!-- ============== Plugins ============== -->
+  <link href="assets/js/plugins/c3charts/c3.min.css" rel="stylesheet" type="text/css"><!-- ============== CSS - theme ============== -->
+  <link href="assets/skin/default_skin/css/theme.css" rel="stylesheet" type="text/css"><!-- ============== CSS - allcp forms ============== -->
+  <link href="assets/allcp/forms/css/forms.css" rel="stylesheet" type="text/css"><!-- ============== Favicon ============== -->
+  <link href="assets/img/favicon.ico" rel="shortcut icon"><!-- ============== IE8 HTML5 support  ============== -->
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body class="dashboard-page">
-
-
-  <!-- -------------- Body Wrap  -------------- -->
+  <!-- ============== Body Wrap  ============== -->
   <div id="main">
-
-    <!-- -------------- Header  -------------- -->
-    <header class="navbar  bg-dark">
-
+    <!-- ============== Header  ============== -->
+    <header class="navbar bg-dark">
       <ul class="nav navbar-nav navbar-left">
         <li class="dropdown dropdown-fuse">
-          <a href="#" class="dropdown-toggle" role="button" aria-expanded="false">Sorbet
-              </a>
+          <a aria-expanded="false" class="dropdown-toggle" href="#" role="button">Sorbet</a>
         </li>
       </ul>
       <form class="navbar-form navbar-right search-form square" role="search">
         <div class="input-group add-on">
-
-          <input type="text" class="form-control" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'">
-
+          <input class="form-control" onblur="this.placeholder='Search...'" onfocus="this.placeholder=''" placeholder="Search..." type="text">
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
           </div>
-
         </div>
       </form>
-    </header>
-    <!-- -------------- /Header  -------------- -->
-
-    <!-- -------------- Main Wrapper -------------- -->
+    </header><!-- ============== /Header  ============== -->
+    <!-- ============== Main Wrapper ============== -->
     <section id="content_wrapper">
-      <!-- -------------- Topbar -------------- -->
-      <header id="topbar" class="alt">
+      <!-- ============== Topbar ============== -->
+      <header class="alt" id="topbar">
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="breadcrumb-icon">
-              <a href="dashboard1.html">
-                <span class="fa fa-home"></span>
-              </a>
+              <a href="dashboard1.html"><span class="fa fa-home"></span></a>
             </li>
             <li class="breadcrumb-active">
               <a href="dashboard1.html">Dashboard</a>
@@ -90,50 +59,30 @@
             <li class="breadcrumb-current-item">Dashboard</li>
           </ol>
         </div>
-
-      </header>
-      <!-- -------------- /Topbar -------------- -->
-
-      <!-- -------------- Topbar Menu Wrapper -------------- -->
-      <div id="topbar-dropmenu-wrapper" class="topbar-dropmenu-open">
-
+      </header><!-- ============== /Topbar ============== -->
+      <!-- ============== Topbar Menu Wrapper ============== -->
+      <div class="topbar-dropmenu-open" id="topbar-dropmenu-wrapper">
         <div class="topbar-menu row">
           <div class="col-xs-4 col-sm-2 col-sm-offset-3">
-            <a id="addSystemButton" href="#" class="service-box bg-danger">
-              <span class="fa fa-plus"></span>
-              <span class="service-title">Add System</span>
-            </a>
+            <a class="service-box bg-danger" href="#" id="addSystemButton"><span class="fa fa-plus"></span> <span class="service-title">Add System</span></a>
           </div>
           <div class="col-xs-4 col-sm-2">
-            <a href="#" class="service-box bg-system">
-              <span class="fa fa-cog"></span>
-              <span class="service-title">Settings</span>
-            </a>
+            <a class="service-box bg-system" href="#"><span class="fa fa-cog"></span> <span class="service-title">Settings</span></a>
           </div>
           <div class="col-xs-4 col-sm-2">
-            <a href="#" class="service-box bg-dark">
-              <span class="fa fa-user"></span>
-              <span class="service-title">Users</span>
-            </a>
+            <a class="service-box bg-dark" href="#"><span class="fa fa-user"></span> <span class="service-title">Users</span></a>
           </div>
         </div>
-      </div>
-      <!-- -------------- /Topbar Menu Wrapper -------------- -->
-
-      <!-- -------------- Content -------------- -->
-      <section id="content" class="table-layout animated fadeIn">
-
-        <!-- -------------- Column Center -------------- -->
+      </div><!-- ============== /Topbar Menu Wrapper ============== -->
+      <!-- ============== Content ============== -->
+      <section class="table-layout animated fadeIn" id="content">
+        <!-- ============== Column Center ============== -->
         <div class="chute chute-center">
-
-          <!-- -------------- AllCP Info -------------- -->
+          <!-- ============== AllCP Info ============== -->
           <div class="allcp-panels fade-onload">
-
             <div class="row">
-
-              <!-- -------------- AllCP Grid -------------- -->
+              <!-- ============== AllCP Grid ============== -->
               <div class="col-md-12 allcp-grid">
-
                 <div class="panel">
                   <div class="panel-heading">
                     <span class="panel-title">System Status</span>
@@ -161,16 +110,13 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- -------------- /AllCP Grid -------------- -->
+              </div><!-- ============== /AllCP Grid ============== -->
             </div>
           </div>
-        </div>
-        <!-- -------------- /Column Center -------------- -->
-
-        <div id="modal-status" class="popup-basic p25 mfp-with-anim mfp-hide">
+        </div><!-- ============== /Column Center ============== -->
+        <div class="popup-basic p25 mfp-with-anim mfp-hide" id="modal-status">
           <h3 style="text-align: center">Service Status</h3>
-          <h4 style="text-align: center"><span></span></h5>
+          <h4 style="text-align: center"><span></span></h4>
           <table class="table table-striped">
             <thead class="bg-primary br6">
               <tr class="br6">
@@ -178,149 +124,128 @@
                 <th class="br-t-r-r6 br-b-n">Status</th>
               </tr>
             </thead>
-            <tbody>
-
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </section>
-
-      <div id="modal-add-system" class=" popup-basic allcp-form mfp-with-anim mfp-hide">
-                <div class="panel">
-                    <div class="panel-heading">
-              <span class="panel-title">
-                <i class="fa fa-rocket"></i>Add a system</span>
-                    </div>
-                    <!-- -------------- /Panel Heading -------------- -->
-
-                    <form method="post" action="/" id="systemAddForm">
-                        <div class="panel-body ph15">
-                          <div class="alert alert-success light alert-dismissable" style="display:none;" id="systemAddAlert">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                          </div>
-                            <div class="section row">
-                                <div class="col-md-12 ph15">
-                                    <label for="host" class="field prepend-icon">
-                                        <input type="text" name="host" id="host" class="gui-input"
-                                               placeholder="Host with port...">
-                                        <label for="host" class="field-icon">
-                                            <i class="fa fa-server"></i>
-                                        </label>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- -------------- /Section -------------- -->
-
-                            <div class="section row">
-                              <div class="col-md-12 ph15">
-                                  <label for="username" class="field prepend-icon">
-                                      <input type="text" name="username" id="username" class="gui-input"
-                                             placeholder="Username...">
-                                      <label for="username" class="field-icon">
-                                          <i class="fa fa-user"></i>
-                                      </label>
-                                  </label>
-                              </div>
-                            </div>
-
-                            <div class="section row">
-                              <div class="col-md-12 ph15" >
-                                <div class="form-group">
-
-                                    <div class="col-lg-8 col-lg-offset-2">
-                                        <div class="bs-component">
-                                            <select class="form-control" id="authSelector">
-                                                <option disabled selected>Auth Type</option>
-                                                <option>Password</option>
-                                                <option>Key</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-
-                            </div>
-                            <div class="section row">
-                              <div class="col-md-12 ph15">
-                                  <label for="password" class="field prepend-icon" id="passContainer" style="display: none;">
-                                      <input type="password" name="password" id="password" class="gui-input"
-                                             placeholder="Password...">
-                                      <label for="password" class="field-icon">
-                                          <i class="fa fa-key"></i>
-                                      </label>
-                                  </label>
-                                  <textarea style="display: none;" class="form-control" name="ssh_key" placeholder="SSH Key..." id="keyContainer" rows="3"></textarea>
-                              </div>
-                          </div>
-                        </div>
-                        <!-- -------------- /Form -------------- -->
-
-                        <div class="panel-footer">
-                            <button type="submit" class="button btn-primary">Add System</button>
-                        </div>
-                        <!-- -------------- /Panel Footer -------------- -->
-                    </form>
+      <div class=" popup-basic allcp-form mfp-with-anim mfp-hide" id="modal-add-system">
+        <div class="panel">
+          <div class="panel-heading">
+            <span class="panel-title"><i class="fa fa-rocket"></i>Add a system</span>
+          </div><!-- ============== /Panel Heading ============== -->
+          <form action="/" id="systemAddForm" method="post" name="systemAddForm" class="form-horizontal">
+            <div class="panel-body ph15">
+              <div class="alert alert-success light alert-dismissable" id="systemAddAlert" style="display:none;">
+                <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+              </div>
+              <div class="section row">
+                <div class="col-md-12 ph15">
+                  <label class="field prepend-icon" for="host"><input class="gui-input" id="host" name="host" placeholder="Host with port..." type="text"> <label class="field-icon" for="host"><i class="fa fa-server"></i></label></label>
                 </div>
-                <!-- -------------- /Panel -------------- -->
-            </div>
-      <!-- -------------- /Content -------------- -->
+              </div><!-- ============== /Section ============== -->
+              <div class="section row">
+                <div class="col-md-12 ph15">
+                  <label class="field prepend-icon" for="username"><input class="gui-input" id="username" name="username" placeholder="Username..." type="text"> <label class="field-icon" for="username"><i class="fa fa-user"></i></label></label>
+                </div>
+              </div>
+              <div class="section row">
+                <div class="col-md-12 ph15">
+                  <div class="form-group">
+                    <label for="inputSelect" class="col-lg-3 control-label">Auth Type</label>
+                    <div class="col-lg-8 ">
 
-      <!-- -------------- Page Footer -------------- -->
+                      <div class="bs-component">
+                        <select class="form-control" id="authSelector">
+                          <option>
+                            Password
+                          </option>
+                          <option>
+                            Key
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section row">
+                <div class="col-md-12 ph15">
+                  <label class="field prepend-icon" for="password" id="passContainer"><input class="gui-input" id="password" name="password" placeholder="Password..." type="password"> <label class="field-icon" for="password"><i class="fa fa-key"></i></label></label>
+                  <textarea class="form-control" id="keyContainer" name="ssh_key" placeholder="SSH Key..." rows="3" style="display: none;"></textarea>
+                </div>
+              </div>
+              <!--<div class="section row">
+                <div class="col-sm-6 pl15">
+                  <div class="checkbox-custom fill checkbox-primary mb5">
+                    <input checked id="checkboxExample14" type="checkbox"> <label for="checkboxExample14">Standard Services</label>
+                  </div>
+                </div>
+              </div>-->
+            </div><!-- ============== /Form ============== -->
+            <div class="panel-footer">
+              <button class="button btn-primary" type="submit">Add System</button>
+            </div><!-- ============== /Panel Footer ============== -->
+          </form>
+        </div><!-- ============== /Panel ============== -->
+      </div><!-- ============== /Content ============== -->
+      <!-- ============== Page Footer ============== -->
       <footer id="content-footer">
         <div class="row">
           <div class="col-md-6">
-            <span class="footer-legal">© 2015 All rights reserved. <a href="#">Therms of use</a> and <a
-                            href="#">Privacy policy</a></span>
+            <span class="footer-legal">© 2015 All rights reserved. <a href="#">Therms of use</a> and <a href="#">Privacy policy</a></span>
           </div>
         </div>
-      </footer>
-      <!-- -------------- /Page Footer -------------- -->
+      </footer><!-- ============== /Page Footer ============== -->
+    </section><!-- ============== /Main Wrapper ============== -->
+  </div><!-- ============== /Body Wrap  ============== -->
+  <!-- ============== Scripts ============== -->
+  <!-- ============== jQuery ============== -->
+  <script src="assets/js/jquery/jquery-1.11.3.min.js">
+  </script>
+  <script src="assets/js/jquery/jquery_ui/jquery-ui.min.js">
+  </script> <!-- ============== HighCharts Plugin ============== -->
 
-    </section>
-    <!-- -------------- /Main Wrapper -------------- -->
+  <script src="assets/js/plugins/highcharts/highcharts.js">
+  </script>
+  <script src="assets/js/plugins/c3charts/d3.min.js">
+  </script>
+  <script src="assets/js/plugins/c3charts/c3.min.js">
+  </script> <!-- ============== Simple Circles Plugin ============== -->
 
-  </div>
-  <!-- -------------- /Body Wrap  -------------- -->
+  <script src="assets/js/plugins/circles/circles.js">
+  </script> <!-- ============== Maps JSs ============== -->
 
-  <!-- -------------- Scripts -------------- -->
+  <script src="assets/js/plugins/jvectormap/jquery.jvectormap.min.js">
+  </script>
+  <script src="assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js">
+  </script> <!-- ============== FullCalendar Plugin ============== -->
 
-  <!-- -------------- jQuery -------------- -->
-  <script src="assets/js/jquery/jquery-1.11.3.min.js"></script>
-  <script src="assets/js/jquery/jquery_ui/jquery-ui.min.js"></script>
+  <script src="assets/js/plugins/fullcalendar/lib/moment.min.js">
+  </script>
+  <script src="assets/js/plugins/fullcalendar/fullcalendar.min.js">
+  </script> <!-- ============== Date/Month - Pickers ============== -->
 
-  <!-- -------------- HighCharts Plugin -------------- -->
-  <script src="assets/js/plugins/highcharts/highcharts.js"></script>
-  <script src="assets/js/plugins/c3charts/d3.min.js"></script>
-  <script src="assets/js/plugins/c3charts/c3.min.js"></script>
+  <script src="assets/allcp/forms/js/jquery-ui-monthpicker.min.js">
+  </script>
+  <script src="assets/allcp/forms/js/jquery-ui-datepicker.min.js">
+  </script> <!-- ============== Magnific Popup Plugin ============== -->
 
-  <!-- -------------- Simple Circles Plugin -------------- -->
-  <script src="assets/js/plugins/circles/circles.js"></script>
+  <script src="assets/js/plugins/magnific/jquery.magnific-popup.js">
+  </script> <!-- ============== Theme Scripts ============== -->
 
-  <!-- -------------- Maps JSs -------------- -->
-  <script src="assets/js/plugins/jvectormap/jquery.jvectormap.min.js"></script>
-  <script src="assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script>
+  <script src="assets/js/utility/utility.js">
+  </script>
+  <script src="assets/js/demo/demo.js">
+  </script>
+  <script src="assets/js/main.js">
+  </script> <!-- ============== Widget JS ============== -->
 
-  <!-- -------------- FullCalendar Plugin -------------- -->
-  <script src="assets/js/plugins/fullcalendar/lib/moment.min.js"></script>
-  <script src="assets/js/plugins/fullcalendar/fullcalendar.min.js"></script>
-
-  <!-- -------------- Date/Month - Pickers -------------- -->
-  <script src="assets/allcp/forms/js/jquery-ui-monthpicker.min.js"></script>
-  <script src="assets/allcp/forms/js/jquery-ui-datepicker.min.js"></script>
-
-  <!-- -------------- Magnific Popup Plugin -------------- -->
-  <script src="assets/js/plugins/magnific/jquery.magnific-popup.js"></script>
-
-  <!-- -------------- Theme Scripts -------------- -->
-  <script src="assets/js/utility/utility.js"></script>
-  <script src="assets/js/demo/demo.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <!-- -------------- Widget JS -------------- -->
-  <script src="assets/js/demo/widgets.js"></script>
-  <script src="assets/js/demo/widgets_sidebar.js"></script>
-  <script src="assets/js/pages/dashboard1.js"></script>
-  <!-- -------------- /Scripts -------------- -->
+  <script src="assets/js/demo/widgets.js">
+  </script>
+  <script src="assets/js/demo/widgets_sidebar.js">
+  </script>
+  <script src="assets/js/pages/dashboard1.js">
+  </script> <!-- ============== /Scripts ============== -->
 
   <script>
     $(document).ready(function() {
@@ -351,7 +276,6 @@
           alert("Password or SSH Key must be selected");
           return;
         }
-        console.log(payload)
 
         $.post("/svc/systems", payload, function(res){
           $("#systemAddAlert").slideUp(function(){
@@ -380,8 +304,8 @@
             },
             close: function(e){
               $("#systemAddForm")[0].reset();
-              $("#authSelector").val('Auth Type')
-              $("#passContainer").hide();
+              $("#authSelector").val('Password')
+              $("#passContainer").show();
               $("#keyContainer").hide();
             }
           },
@@ -426,7 +350,7 @@
                 break;
             }
 
-            var row = "<tr><td class='pl30'>" + check.name + "</td><td><button type='button' class='btn " + btnClass + " dropdown-toggle' data-toggle='dropdown'>" + status + "  </button></td></tr>"
+            var row = "<tr><td class='pl30'>" + check.name + "<\/td><td><button type='button' class='btn " + btnClass + " dropdown-toggle' data-toggle='dropdown'>" + status + "  <\/button><\/td><\/tr>"
 
             $("#modal-status table tbody").append(row);
 
@@ -436,7 +360,5 @@
       })
     })
   </script>
-
 </body>
-
 </html>

@@ -9,6 +9,8 @@ A light, simple, and delicious infrastructure monitoring solution.
 
 Simple monitoring via SSH.
 
+Tested on Ubuntu only...
+
 #### How to install
 ```bash
 $ [sudo] npm install -g sorbet
