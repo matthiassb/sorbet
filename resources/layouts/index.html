@@ -72,7 +72,7 @@
 
         </div>
       </form>
-</header>
+    </header>
     <!-- -------------- /Header  -------------- -->
 
     <!-- -------------- Main Wrapper -------------- -->
@@ -104,7 +104,7 @@
 
         <div class="topbar-menu row">
           <div class="col-xs-4 col-sm-2 col-sm-offset-3">
-            <a href="#" class="service-box bg-danger">
+            <a id="addSystemButton" href="#" class="service-box bg-danger">
               <span class="fa fa-plus"></span>
               <span class="service-title">Add System</span>
             </a>
@@ -194,80 +194,57 @@
                 <div class="panel">
                     <div class="panel-heading">
               <span class="panel-title">
-                <i class="fa fa-rocket"></i>Leave a comment</span>
+                <i class="fa fa-rocket"></i>Add a system</span>
                     </div>
                     <!-- -------------- /Panel Heading -------------- -->
 
-                    <form method="post" action="/" id="comment">
-                        <div class="panel-body  ph15">
+                    <form method="post" action="/" id="systemAddForm">
+                        <div class="panel-body ph15">
+                          <div class="alert alert-success light alert-dismissable" style="display:none;" id="systemAddAlert">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          </div>
                             <div class="section row">
-                                <div class="col-md-6 ph15">
-                                    <label for="firstname" class="field prepend-icon">
-                                        <input type="text" name="firstname" id="firstname" class="gui-input"
-                                               placeholder="First name...">
-                                        <label for="firstname" class="field-icon">
-                                            <i class="fa fa-user"></i>
+                                <div class="col-md-12 ph15">
+                                    <label for="host" class="field prepend-icon">
+                                        <input type="text" name="host" id="host" class="gui-input"
+                                               placeholder="Host with port...">
+                                        <label for="host" class="field-icon">
+                                            <i class="fa fa-server"></i>
                                         </label>
                                     </label>
                                 </div>
-                                <!-- -------------- /section -------------- -->
-
-                                <div class="col-md-6 ph15">
-                                    <label for="lastname" class="field prepend-icon">
-                                        <input type="text" name="lastname" id="lastname" class="gui-input"
-                                               placeholder="Last name...">
-                                        <label for="lastname" class="field-icon">
-                                            <i class="fa fa-user"></i>
-                                        </label>
-                                    </label>
-                                </div>
-                                <!-- -------------- /section -------------- -->
-
                             </div>
                             <!-- -------------- /Section -------------- -->
 
                             <div class="section row">
-                                <div class="col-md-6 ph15">
-                                    <label for="email" class="field prepend-icon">
-                                        <input type="email" name="email" id="email" class="gui-input"
-                                               placeholder="Email address">
-                                        <label for="email" class="field-icon">
-                                            <i class="fa fa-envelope"></i>
-                                        </label>
-                                    </label>
-                                </div>
-                                <!-- -------------- /section -------------- -->
-
-                                <div class="col-md-6 ph15">
-                                    <label for="website" class="field prepend-icon">
-                                        <input type="url" name="website" id="lastname" class="gui-input"
-                                               placeholder="Website url...">
-                                        <label for="website" class="field-icon">
-                                            <i class="fa fa-globe"></i>
-                                        </label>
-                                    </label>
-                                </div>
-                                <!-- -------------- /section -------------- -->
-
+                              <div class="col-md-12 ph15">
+                                  <label for="username" class="field prepend-icon">
+                                      <input type="text" name="username" id="username" class="gui-input"
+                                             placeholder="Username...">
+                                      <label for="username" class="field-icon">
+                                          <i class="fa fa-user"></i>
+                                      </label>
+                                  </label>
+                              </div>
                             </div>
-                            <!-- -------------- /Section -------------- -->
 
-                            <div class="section ph5">
-                                <label for="comment" class="field prepend-icon">
-                                      <textarea class="gui-textarea" id="comment" name="comment"
-                                                placeholder="Your comment"></textarea>
-                                    <label for="comment" class="field-icon">
-                                        <i class="fa fa-comments"></i>
-                                    </label>
-                                </label>
+                            <div class="section row">
+                              <div class="col-md-12 ph15">
+                                  <label for="password" class="field prepend-icon">
+                                      <input type="password" name="password" id="password" class="gui-input"
+                                             placeholder="Password...">
+                                      <label for="password" class="field-icon">
+                                          <i class="fa fa-key"></i>
+                                      </label>
+                                  </label>
+                              </div>
                             </div>
-                            <!-- -------------- /section -------------- -->
 
                         </div>
                         <!-- -------------- /Form -------------- -->
 
                         <div class="panel-footer">
-                            <button type="submit" class="button btn-primary">Post Comment</button>
+                            <button type="submit" class="button btn-primary">Add System</button>
                         </div>
                         <!-- -------------- /Panel Footer -------------- -->
                     </form>
@@ -335,6 +312,37 @@
 
   <script>
     $(document).ready(function() {
+      $("#systemAddForm").submit(function(e){
+        e.preventDefault();
+        $.post("/svc/systems", $(this).serialize(), function(res){
+          $("#systemAddAlert").slideUp(function(){
+            $("#systemAddAlert").text(res.message)
+            $("#systemAddAlert").switchClass('alert-danger', 'alert-success')
+            $("#systemAddAlert").slideDown();
+          });
+        }).fail(function(res) {
+          $("#systemAddAlert").slideUp(function(){
+            $("#systemAddAlert").text(res.responseJSON.message)
+            $("#systemAddAlert").switchClass('alert-success', 'alert-danger')
+            $("#systemAddAlert").slideDown();
+          });
+        });
+      })
+      $("#addSystemButton").click(function(e) {
+        $.magnificPopup.open({
+          removalDelay: 500,
+          items: {
+            src: "#modal-add-system"
+          },
+          callbacks: {
+            beforeOpen: function(e) {
+              var Animation = $("#animation-switcher").find('.active-animation').attr('data-effect');
+              this.st.mainClass = "mfp-flipInY";
+            }
+          },
+          midClick: true
+        });
+      });
       $(".clickHost").click(function(e) {
         e.preventDefault();
         $.get("/svc/systems/" + $(this).data("db-id"), function(res) {

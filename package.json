@@ -1,11 +1,16 @@
 {
   "name": "sorbet",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A light, simple, and delicious infrastructure monitoring solution.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "infrastructure",
+    "monitoring",
+    "system"
+  ],
   "bin": "./bin/sorbet",
   "author": "Matthias Brooks <matthias.brooks@live.com> (http://www.github.com/matthiassb)",
   "license": "MIT",
