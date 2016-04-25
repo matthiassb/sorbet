@@ -7,6 +7,7 @@ var inert = require('inert');
 var Path = require('path');
 var SSH = require('simple-ssh');
 var Datastore = require('nedb');
+var _ = require('lodash');
 var Joi = require('joi');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
@@ -134,13 +135,15 @@ server.route({
     db.findOne({
       _id: request.params.id
     }, {
-      password: 0
+      password: 0,
+      ssh_key: 0
     }, function(err, docs) {
       if (err) {
         return reply({
           "message": err.message
         }).code(500);
       }
+      docs["checks"] = _.sortBy(docs["checks"], ['name']);
       reply(docs)
     });
   }
